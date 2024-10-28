@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Suivi de Lecture</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6">Suivi de Lecture</h1>
+
+        <form id="bookForm" class="mb-6 bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-semibold mb-4">Ajouter un Livre</h2>
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700">Titre :</label>
+                <input type="text" id="title" name="title" required class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="author" class="block text-gray-700">Auteur :</label>
+                <input type="text" id="author" name="author" required class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="pages" class="block text-gray-700">Nombre de Pages :</label>
+                <input type="number" id="pages" name="pages" required class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="pagesRead" class="block text-gray-700">Pages Lues :</label>
+                <input type="number" id="pagesRead" name="pagesRead" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="status" class="block text-gray-700">Statut :</label>
+                <select id="status" name="status" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+                    <option value="Read">Lu</option>
+                    <option value="Re-read">Relu</option>
+                    <option value="DNF">Pas fini</option>
+                    <option value="Currently reading">En cours</option>
+                    <option value="Returned Unread">Rendu non lu</option>
+                    <option value="Want to read">À lire</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="format" class="block text-gray-700">Format :</label>
+                <select id="format" name="format" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+                    <option value="Print">Impression</option>
+                    <option value="PDF">PDF</option>
+                    <option value="Ebook">Ebook</option>
+                    <option value="AudioBook">Livre audio</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="suggestedBy" class="block text-gray-700">Suggéré par :</label>
+                <input type="text" id="suggestedBy" name="suggestedBy" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="price" class="block text-gray-700">Prix :</label>
+                <input type="number" id="price" name="price" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Ajouter le Livre</button>
+        </form>
+
+        <div id="bookList" class="mt-6">
+            <h2 class="text-xl font-bold">Livres Enregistrés</h2>
+            <ul id="bookItems" class="list-disc pl-5"></ul>
+        </div>
+
+        <div id="stats" class="mt-6">
+            <h2 class="text-xl font-bold">Statistiques</h2>
+            <p id="totalBooks">Total de livres lus : 0</p>
+            <p id="totalPages">Total de pages lues : 0</p>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
